@@ -20,8 +20,7 @@ new Typed('#cert-typed', {
     'AWS Solutions Architect Associate',
     'Google IT Support Professional',
     'ISC2 Certified in Cybersecurity',
-    'Google AI Essentials',
-    'Skills for Hire: Cybersecurity'
+    'Google AI Essentials'
   ],
   typeSpeed: 50,
   backSpeed: 25,
