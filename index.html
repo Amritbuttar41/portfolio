@@ -1,217 +1,191 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-index 55d23fa4416e4960f1ff77a6c8dfd594f4d0605b..887f06ea75faf04343315e5f791f8d5c97142ef2 100644
---- a/index.html
-+++ b/index.html
-@@ -1,172 +1,186 @@
- <!DOCTYPE html>
- <html lang="en" data-theme="light">
- <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
--  <title>AMRITPAL SINGH — Cloud Security Analyst</title>
-+  <title>AMRITPAL SINGH — Cloud Analyst</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-   <link href="assets/css/style.css" rel="stylesheet">
- </head>
- <body>
- 
- <!-- NAVBAR -->
- <nav class="navbar navbar-expand-lg fixed-top nav-surface shadow-sm">
-   <div class="container">
-     <a class="navbar-brand fw-bold" href="#hero">HOME</a>
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-       <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="collapse navbar-collapse" id="navmenu">
-       <ul class="navbar-nav ms-auto align-items-lg-center">
-         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-         <li class="nav-item ms-lg-3">
--          <button id="themeToggle" class="btn btn-outline-primary btn-sm" aria-label="Toggle theme">🌞 Light</button>
-+          <button id="themeToggle" class="btn btn-outline-primary btn-sm d-flex align-items-center justify-content-center" aria-label="Toggle theme">
-+            <i class="bi bi-sun"></i>
-+          </button>
-         </li>
-       </ul>
-     </div>
-   </div>
- </nav>
- 
- <!-- HERO -->
- <header id="hero" class="py-5">
-   <div class="container">
-     <div class="row align-items-center flex-column-reverse flex-lg-row">
-       <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right">
-         <div class="hero-bubble p-4 p-lg-5 rounded-4">
-           <h1 class="display-5 fw-bold mb-1">AMRITPAL SINGH</h1>
--          <p class="lead mb-0">Cloud Security Analyst</p>
-+          <p class="lead mb-0">Cloud Analyst</p>
-         </div>
-       </div>
-       <div class="col-lg-6 text-center mb-4 mb-lg-0" data-aos="fade-left">
-         <img class="hero-img" src="assets/img/hero.jpg" alt="Amritpal Singh portrait">
-       </div>
-     </div>
-   </div>
- </header>
- 
- <!-- ABOUT -->
- <section id="about" class="section-pad">
-   <div class="container">
-     <div class="row align-items-center g-4">
-       <div class="col-lg-6" data-aos="fade-up">
-         <h2 class="section-title">About Me</h2>
-         <p>
--          I’m <strong>Amritpal Singh</strong>, a Cloud Security Analyst with certifications in
-+          I’m <strong>Amritpal Singh</strong>, a Cloud Analyst with certifications in
-           AWS Solutions Architect Associate, ISC2 Certified in Cybersecurity, Google IT Support Professional,
--          Google AI Essentials, and Skills for Hire: Cybersecurity.
-+          and Google AI Essentials.
-         </p>
-         <p>
-           I specialize in AWS, GCP, Linux, Python, Networking, Security, Cloud Architecture, and Automation —
--          designing secure, scalable cloud solutions and continuously adapting to evolving technologies.
-+          designing secure, scalable cloud solutions and continually expanding my expertise.
-         </p>
-+        <a href="resume.pdf" target="_blank" class="btn btn-primary mt-3">View Resume</a>
-       </div>
-       <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
-         <div class="cert-box rounded-4 p-4">
-           <div id="cert-typed" class="cert-typed"></div>
-         </div>
-       </div>
-     </div>
-   </div>
- </section>
- 
- <!-- SKILLS -->
- <section id="skills" class="section-pad alt-surface">
-   <div class="container">
-     <h2 class="section-title text-center mb-5" data-aos="fade-up">Skills</h2>
-     <div class="row g-4">
-       <div class="col-md-6" data-aos="fade-right">
-         <div class="skill">
-           <div class="d-flex justify-content-between mb-1"><span class="skill-label">AWS</span></div>
--          <div class="progress"><div class="progress-bar aws" role="progressbar" data-value="95"></div></div>
-+          <div class="progress"><div class="progress-bar aws" role="progressbar" data-value="85"></div></div>
-         </div>
-         <div class="skill mt-3">
-           <div class="d-flex justify-content-between mb-1"><span class="skill-label">GCP</span></div>
--          <div class="progress"><div class="progress-bar gcp" role="progressbar" data-value="80"></div></div>
-+          <div class="progress"><div class="progress-bar gcp" role="progressbar" data-value="70"></div></div>
-         </div>
-         <div class="skill mt-3">
-           <div class="d-flex justify-content-between mb-1"><span class="skill-label">Linux</span></div>
--          <div class="progress"><div class="progress-bar linux" role="progressbar" data-value="88"></div></div>
-+          <div class="progress"><div class="progress-bar linux" role="progressbar" data-value="80"></div></div>
-         </div>
-         <div class="skill mt-3">
-           <div class="d-flex justify-content-between mb-1"><span class="skill-label">Python</span></div>
--          <div class="progress"><div class="progress-bar python" role="progressbar" data-value="78"></div></div>
-+          <div class="progress"><div class="progress-bar python" role="progressbar" data-value="75"></div></div>
-         </div>
-       </div>
-       <div class="col-md-6" data-aos="fade-left">
-         <div class="skill">
-           <div class="d-flex justify-content-between mb-1"><span class="skill-label">Networking</span></div>
--          <div class="progress"><div class="progress-bar net" role="progressbar" data-value="82"></div></div>
-+          <div class="progress"><div class="progress-bar net" role="progressbar" data-value="78"></div></div>
-         </div>
-         <div class="skill mt-3">
-           <div class="d-flex justify-content-between mb-1"><span class="skill-label">Security</span></div>
--          <div class="progress"><div class="progress-bar sec" role="progressbar" data-value="90"></div></div>
-+          <div class="progress"><div class="progress-bar sec" role="progressbar" data-value="82"></div></div>
-         </div>
-         <div class="skill mt-3">
-           <div class="d-flex justify-content-between mb-1"><span class="skill-label">Cloud Architecture</span></div>
--          <div class="progress"><div class="progress-bar arch" role="progressbar" data-value="85"></div></div>
-+          <div class="progress"><div class="progress-bar arch" role="progressbar" data-value="80"></div></div>
-         </div>
-         <div class="skill mt-3">
-           <div class="d-flex justify-content-between mb-1"><span class="skill-label">Automation</span></div>
--          <div class="progress"><div class="progress-bar auto" role="progressbar" data-value="75"></div></div>
-+          <div class="progress"><div class="progress-bar auto" role="progressbar" data-value="70"></div></div>
-         </div>
-       </div>
-     </div>
-   </div>
- </section>
- 
- <!-- PROJECTS -->
- <section id="projects" class="section-pad">
-   <div class="container">
-     <h2 class="section-title text-center mb-5" data-aos="fade-up">Projects</h2>
-     <div class="row g-4">
-       <div class="col-md-4" data-aos="zoom-in">
-         <div class="card project h-100 border-0 shadow-sm glass">
-+          <img src="assets/img/proj1.png" class="card-img-top" alt="Secure static website hosting screenshot">
-           <div class="card-body">
--            <h5 class="card-title">Project 1</h5>
--            <p class="card-text">Brief description of a cloud/security project. Hover for a subtle lift and glow.</p>
-+            <h5 class="card-title">Secure Static Website Hosting</h5>
-+            <p class="card-text">Deployed a static portfolio on Amazon S3 with CloudFront and Route 53, enforcing HTTPS and IAM policies.</p>
-           </div>
-         </div>
-       </div>
-       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="50">
-         <div class="card project h-100 border-0 shadow-sm glass">
-+          <img src="assets/img/proj2.png" class="card-img-top" alt="Serverless image processor architecture">
-           <div class="card-body">
--            <h5 class="card-title">Project 2</h5>
--            <p class="card-text">Brief description of a cloud architecture or automation project.</p>
-+            <h5 class="card-title">Serverless Image Processor</h5>
-+            <p class="card-text">Built an event-driven pipeline using Lambda and S3 to resize images and store metadata in DynamoDB.</p>
-           </div>
-         </div>
-       </div>
-       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-         <div class="card project h-100 border-0 shadow-sm glass">
-+          <img src="assets/img/proj3.png" class="card-img-top" alt="VPC monitoring dashboard">
-           <div class="card-body">
--            <h5 class="card-title">Project 3</h5>
--            <p class="card-text">Brief description of a security hardening or monitoring project.</p>
-+            <h5 class="card-title">VPC Security Monitoring Lab</h5>
-+            <p class="card-text">Designed a multi-tier VPC with public/private subnets, security groups, and CloudWatch alarms for traffic visibility.</p>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </section>
- 
- <!-- CONTACT -->
- <section id="contact" class="section-pad alt-surface">
-   <div class="container text-center">
-     <h2 class="section-title mb-4" data-aos="fade-up">Contact</h2>
--    <p class="mb-4" data-aos="fade-up" data-aos-delay="50">Email me for opportunities or collaborations.</p>
--    <a data-aos="fade-up" data-aos-delay="100" href="mailto:amritbuttar41@gmail.com?subject=Cloud%20Security%20Role%20-%20Amritpal%20Singh&body=Hi%20Amritpal%2C%0D%0A%0D%0AWe%20found%20your%20portfolio%20and%20would%20like%20to%20connect..." class="btn btn-primary btn-lg shadow-sm">Send Email</a>
-+    <p class="mb-3" data-aos="fade-up" data-aos-delay="50">
-+      <i class="bi bi-envelope-fill me-2"></i>
-+      <a href="mailto:amritbuttar41@gmail.com">amritbuttar41@gmail.com</a>
-+    </p>
-+    <p class="mb-4" data-aos="fade-up" data-aos-delay="75">
-+      <i class="bi bi-linkedin me-2"></i>
-+      <a href="https://www.linkedin.com/in/amritpal-singh007/" target="_blank">linkedin.com/in/amritpal-singh007</a>
-+    </p>
-+    <a data-aos="fade-up" data-aos-delay="100" href="mailto:amritbuttar41@gmail.com?subject=Cloud%20Role%20Enquiry%20-%20Amritpal%20Singh&body=Hi%20Amritpal%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect..." class="btn btn-primary btn-lg shadow-sm">Send Email</a>
-   </div>
- </section>
- 
- <footer class="py-4 text-center small footer-surface">
-   <div class="container">© 2025 AMRITPAL SINGH. All Rights Reserved.</div>
- </footer>
- 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
- <script src="assets/js/main.js"></script>
- </body>
- </html>
- 
-EOF
-)
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMRITPAL SINGH — Cloud Security Analyst</title>
+  <meta name="description" content="Portfolio of AMRITPAL SINGH — Cloud Analyst, Technical Specialist, Cloud Security Analyst">
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Style -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Particles Background -->
+  <div id="tsparticles"></div>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg fixed-top glass-nav py-2">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#hero">HOME</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3"><button id="themeToggle" class="btn btn-outline-light btn-sm">🌞 Light</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" class="min-vh-100 d-flex align-items-center">
+    <div class="container position-relative">
+      <div class="row gy-5 align-items-center flex-column-reverse flex-lg-row">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="hero-card p-4 p-lg-5 rounded-4">
+            <h1 class="display-3 fw-extrabold text-uppercase glow mb-2">AMRITPAL SINGH</h1>
+            <div class="typed-wrap fs-5"><span id="typed-roles"></span></div>
+            <div class="mt-4 d-flex flex-wrap gap-3">
+              <a href="#contact" class="btn btn-primary btn-lg magnetic">Contact Me</a>
+              <a class="btn btn-outline-primary btn-lg magnetic" href="resume.pdf" target="_blank">Download Resume</a>
+            </div>
+            <div class="mt-4 tech-marquee">
+              <div class="inner">
+                <span><i class="bi bi-cloud"></i> AWS</span>
+                <span><i class="bi bi-shield-lock"></i> Security</span>
+                <span><i class="bi bi-terminal"></i> Linux</span>
+                <span><i class="bi bi-diagram-3"></i> Architecture</span>
+                <span><i class="bi bi-code-slash"></i> Python</span>
+                <span><i class="bi bi-gear"></i> Automation</span>
+                <span><i class="bi bi-people"></i> Agile</span>
+                <span><i class="bi bi-kanban"></i> Scrum</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center" data-aos="fade-left">
+          <div class="hero-frame rounded-circle mx-auto">
+            <img src="assets/img/hero.jpg" class="hero-img" alt="Hero">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Decorative wave divider -->
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64L80,58.7C160,53,320,43,480,64C640,85,800,139,960,154.7C1120,171,1280,149,1360,138.7L1440,128V120H0Z" /></svg>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section-pad">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6" data-aos="fade-up">
+          <h2 class="section-title">About Me</h2>
+          <p>I’m <strong>Amritpal Singh</strong>, a Cloud Security Analyst who designs secure, scalable AWS solutions. I harden workloads, automate guardrails, and ship improvements fast with Agile and Scrum practices.</p>
+          <p>Strengths: AWS, Linux, networking (DNS/DHCP/TCP-IP), Python automation, and security best practices.</p>
+        </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="80">
+          <div class="cert-card rounded-4 p-4">
+            <div class="small text-uppercase text-muted mb-2">Certifications</div>
+            <div id="typed-certs" class="typed-certs"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section-pad alt-surface">
+    <div class="container">
+      <h2 class="section-title text-center mb-5" data-aos="fade-up">Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="skill"><div class="skill-label">AWS</div><div class="progress"><div class="progress-bar aws" data-value="95"></div></div></div>
+          <div class="skill mt-3"><div class="skill-label">Linux</div><div class="progress"><div class="progress-bar linux" data-value="88"></div></div></div>
+          <div class="skill mt-3"><div class="skill-label">Python</div><div class="progress"><div class="progress-bar python" data-value="78"></div></div></div>
+          <div class="skill mt-3"><div class="skill-label">Networking</div><div class="progress"><div class="progress-bar net" data-value="82"></div></div></div>
+          <div class="skill mt-3"><div class="skill-label">Security</div><div class="progress"><div class="progress-bar sec" data-value="90"></div></div></div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="skill"><div class="skill-label">Cloud Architecture</div><div class="progress"><div class="progress-bar arch" data-value="85"></div></div></div>
+          <div class="skill mt-3"><div class="skill-label">Automation</div><div class="progress"><div class="progress-bar auto" data-value="75"></div></div></div>
+          <div class="skill mt-3"><div class="skill-label">Agile</div><div class="progress"><div class="progress-bar agile" data-value="80"></div></div></div>
+          <div class="skill mt-3"><div class="skill-label">Scrum Master</div><div class="progress"><div class="progress-bar scrum" data-value="80"></div></div></div>
+          <div class="skill mt-3"><div class="skill-label">Penetration Testing</div><div class="progress"><div class="progress-bar pen" data-value="85"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section-pad">
+    <div class="container">
+      <h2 class="section-title text-center mb-5" data-aos="fade-up">Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in">
+          <a class="card project glass h-100 tilt" href="#" tabindex="0">
+            <img src="assets/img/project1.png" class="card-img-top" alt="Network Security">
+            <div class="card-body">
+              <h5 class="card-title">Network Security Lab</h5>
+              <p class="card-text">Hardened VPCs, NACLs, SGs; IDS; automated checks.</p>
+              <div class="stack small"><span>AWS</span><span>Linux</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="60">
+          <a class="card project glass h-100 tilt" href="#" tabindex="0">
+            <img src="assets/img/project2.png" class="card-img-top" alt="Cloud Security">
+            <div class="card-body">
+              <h5 class="card-title">Cloud Security Blueprint</h5>
+              <p class="card-text">CIS Benchmarks, IAM guardrails, logging & detection.</p>
+              <div class="stack small"><span>AWS</span><span>Python</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="120">
+          <a class="card project glass h-100 tilt" href="#" tabindex="0">
+            <img src="assets/img/project3.png" class="card-img-top" alt="Threat Detection">
+            <div class="card-body">
+              <h5 class="card-title">Threat Detection Pipeline</h5>
+              <p class="card-text">Centralized logs, detections, alerts; automated IR notes.</p>
+              <div class="stack small"><span>AWS</span><span>Security</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-pad alt-surface">
+    <div class="container">
+      <h2 class="section-title text-center mb-4" data-aos="fade-up">Contact</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="60">
+          <div class="email-draft p-4 rounded-4">
+            <div class="small text-uppercase text-muted mb-2">Email Draft</div>
+            <div class="draft-to"><strong>To:</strong> amritbuttar41@gmail.com</div>
+            <div class="draft-subject"><strong>Subject:</strong> Cloud Security Role — Amritpal Singh</div>
+            <div class="draft-body"><strong>Body:</strong><br>
+              Hi Amritpal,<br><br>
+              We found your portfolio and would like to connect about a Cloud Security opportunity.<br><br>
+              — Your Name, Company
+            </div>
+            <a class="btn btn-primary mt-3 magnetic" href="mailto:amritbuttar41@gmail.com?subject=Cloud%20Security%20Role%20%E2%80%94%20Amritpal%20Singh&body=Hi%20Amritpal%2C%0D%0A%0D%0AWe%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20about%20a%20Cloud%20Security%20opportunity.%0D%0A%0D%0A%E2%80%94%20Your%20Name%2C%20Company">Open in Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center footer-surface small">
+    <div class="container">© 2025 AMRITPAL SINGH. All rights reserved.</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
