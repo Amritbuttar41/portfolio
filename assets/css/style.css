@@ -13,3 +13,54 @@ body{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans
 .card.project:hover{transform: translateY(-6px) scale(1.01); box-shadow:0 1.25rem 2rem rgba(0,0,0,.08)}
 .card.project .project-img{transition: transform .35s ease}
 .card.project:hover .project-img{transform: scale(1.05)}
+
+
+/* AI Glow & Motion Effects */
+.card.project {
+  position: relative;
+  overflow: hidden;
+}
+.card.project::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #60a5fa, #a78bfa, #60a5fa);
+  animation: rotate 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+.card.project:hover::before {
+  opacity: 0.3;
+}
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+.card.project .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* Tools & Technologies AI style */
+.tool {
+  position: relative;
+  color: white;
+  background: linear-gradient(135deg,#3b82f6,#8b5cf6);
+  border: none;
+  box-shadow: 0 0 10px rgba(99,102,241,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tool:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 20px rgba(99,102,241,0.9);
+}
+.tool i {
+  background: linear-gradient(135deg,#93c5fd,#a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
