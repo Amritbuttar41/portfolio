@@ -38,3 +38,67 @@ header.bg-light{background:#f9fafb !important}
 .card.project:hover .ai-glow{opacity:.85}
 .card.project .card-body{position:relative;z-index:1}
 footer small{color:var(--muted)}
+
+
+/* ==== THEME SUPPORT ==== */
+:root{
+  --bg: #ffffff;
+  --text: #0f172a;
+  --surface: #ffffff;
+  --surface-soft:#f8fafc;
+  --border:#e5e7eb;
+}
+[data-theme="dark"]{
+  --bg: #121212;
+  --text: #e5e7eb;
+  --surface:#1e1e1e;
+  --surface-soft:#161616;
+  --border:#2a2a2a;
+}
+body{background:var(--bg); color:var(--text); transition: background .35s ease, color .35s ease;}
+.navbar, .bg-white{background:var(--surface) !important;}
+.border-bottom, .border-top, .card, .form-control, .btn-outline-primary, .btn-outline-secondary {border-color: var(--border) !important;}
+section.bg-light{background: var(--surface-soft) !important;}
+.card.project .card-body{background: var(--surface);}
+
+/* Boost gradients slightly in dark mode for visibility */
+[data-theme="dark"] .bar-aws{filter: brightness(1.1) saturate(1.05);}
+[data-theme="dark"] .bar-gcp{filter: brightness(1.1) saturate(1.05);}
+[data-theme="dark"] .bar-linux{filter: brightness(1.1) saturate(1.05);}
+[data-theme="dark"] .bar-python{filter: brightness(1.1) saturate(1.05);}
+[data-theme="dark"] .bar-networking{filter: brightness(1.1) saturate(1.05);}
+[data-theme="dark"] .bar-security{filter: brightness(1.1) saturate(1.05);}
+[data-theme="dark"] .bar-architecture{filter: brightness(1.1) saturate(1.05);}
+[data-theme="dark"] .bar-automation{filter: brightness(1.1) saturate(1.05);}
+
+/* Project glow toned for dark */
+[data-theme="dark"] .card.project .ai-glow{
+  opacity:.75;
+  filter: blur(14px) brightness(1.05);
+}
+
+/* Inputs/buttons surfaces */
+.form-control, .form-select {background: var(--surface); color: var(--text);}
+.form-control::placeholder{color:#9aa4b2}
+.btn-outline-primary{color:#3b82f6}
+.btn-outline-secondary{color:#475569}
+
+/* ==== FLASHY SCROLL-UP EFFECTS ==== */
+.flashy-up{
+  animation: flashyIn .7s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes flashyIn{
+  0%{opacity:0; transform: translateY(40px) rotateX(35deg) rotateZ(-6deg) scale(.92)}
+  60%{opacity:1; transform: translateY(-6px) rotateX(0) rotateZ(0) scale(1.02)}
+  100%{opacity:1; transform: translateY(0) scale(1)}
+}
+
+
+/* Slightly larger skill labels */
+#skills label {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+#skills label i {
+  font-size: 1.2rem;
+}

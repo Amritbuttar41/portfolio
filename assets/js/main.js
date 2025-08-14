@@ -45,3 +45,46 @@ const observer = new IntersectionObserver((entries)=>{
 },{ threshold: 0.4 });
 
 bars.forEach(b => observer.observe(b));
+
+
+// ==== THEME TOGGLE ====
+const root = document.documentElement;
+const savedTheme = localStorage.getItem('theme') || 'light';
+root.setAttribute('data-theme', savedTheme);
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+function setIcon(theme){ themeIcon.className = theme === 'dark' ? 'bi bi-sun' : 'bi bi-moon'; }
+setIcon(savedTheme);
+themeToggle?.addEventListener('click', ()=>{
+  const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  setIcon(next);
+});
+
+// ==== FLASHY SCROLL-UP EFFECTS ====
+// Detect scroll direction
+let lastY = window.scrollY;
+let direction = 'down';
+window.addEventListener('scroll', ()=>{
+  const y = window.scrollY;
+  direction = y < lastY ? 'up' : 'down';
+  lastY = y;
+}, {passive:true});
+
+// Apply flashy effect to elements with data-aos when entering view while scrolling up
+const animTargets = document.querySelectorAll('[data-aos]');
+const upObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting && direction === 'up'){
+      entry.target.classList.remove('flashy-up'); // reset if present
+      // force reflow to restart animation
+      void entry.target.offsetWidth;
+      entry.target.classList.add('flashy-up');
+      // remove after animation ends to allow re-run next time
+      setTimeout(()=> entry.target.classList.remove('flashy-up'), 900);
+    }
+  });
+},{threshold:0.25});
+animTargets.forEach(el => upObserver.observe(el));
