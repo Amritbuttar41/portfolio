@@ -1,47 +1,46 @@
-// Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
-// Typewriter
-try{new Typed('#typed',{strings:['Cloud Security Analyst','AWS Solutions Architect'],typeSpeed:42,backSpeed:28,backDelay:1000,loop:true});}catch(e){}
-// AOS
-AOS.init({ once:false, duration:650, offset:80 });
 // Theme toggle
-(function(){
-  const root=document.documentElement, btn=document.getElementById('themeToggle'), icon=document.getElementById('themeIcon');
-  const saved=localStorage.getItem('theme')||'light';
-  root.setAttribute('data-theme',saved);
-  if(icon) icon.className=saved==='dark'?'bi bi-sun':'bi bi-moon';
-  btn&&btn.addEventListener('click',()=>{
-    const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
-    root.setAttribute('data-theme',next);
-    localStorage.setItem('theme',next);
-    if(icon) icon.className=next==='dark'?'bi bi-sun':'bi bi-moon';
+const bodyEl = document.documentElement;
+const toggleBtn = document.getElementById('themeToggle');
+
+function setTheme(theme){
+  bodyEl.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  toggleBtn.textContent = theme === 'dark' ? '🌙 Dark' : '🌞 Light';
+}
+const savedTheme = localStorage.getItem('theme') || 'light';
+setTheme(savedTheme);
+toggleBtn.addEventListener('click', ()=> setTheme(bodyEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
+
+// AOS init (animate on scroll down & up)
+AOS.init({ once: false, duration: 700, easing: 'ease-out-cubic' });
+
+// Typed certifications
+new Typed('#cert-typed', {
+  strings: [
+    'AWS Solutions Architect Associate',
+    'Google IT Support Professional',
+    'ISC2 Certified in Cybersecurity',
+    'Google AI Essentials',
+    'Skills for Hire: Cybersecurity'
+  ],
+  typeSpeed: 50,
+  backSpeed: 25,
+  backDelay: 1500,
+  loop: true
+});
+
+// Animate skills bars when in view + reset when out of view
+const bars = document.querySelectorAll('#skills .progress-bar');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    const bar = entry.target;
+    const val = bar.getAttribute('data-value');
+    if(entry.isIntersecting){
+      requestAnimationFrame(()=> bar.style.width = val + '%');
+    } else {
+      bar.style.width = '0%';
+    }
   });
-})();
-// Skills bars animate on enter, reset on exit
-(function(){
-  const bars=document.querySelectorAll('#skills .progress-bar.bar');
-  const targets=new Map(); bars.forEach(b=>targets.set(b,(b.getAttribute('data-target')||'100')+'%'));
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      const el=e.target;
-      if(e.isIntersecting){ requestAnimationFrame(()=>{ el.style.width=targets.get(el); }); }
-      else{ el.style.width='0%'; }
-    });
-  },{threshold:0.4});
-  bars.forEach(b=>{ b.style.width='0%'; b.style.transition='width 1000ms ease'; obs.observe(b); });
-})();
-// Flashy effect when scrolling UP
-(function(){
-  let lastY=window.scrollY, dir='down';
-  addEventListener('scroll',()=>{const y=window.scrollY; dir=y<lastY?'up':'down'; lastY=y;},{passive:true});
-  const topObs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting && dir==='up'){
-        e.target.classList.remove('flashy-top'); void e.target.offsetWidth;
-        e.target.classList.add('flashy-top');
-        setTimeout(()=>e.target.classList.remove('flashy-top'),900);
-      }
-    });
-  },{threshold:0.35});
-  document.querySelectorAll('header.hero, section').forEach(el=>topObs.observe(el));
-})();
+}, { threshold: 0.35 });
+
+bars.forEach(b=> observer.observe(b));
