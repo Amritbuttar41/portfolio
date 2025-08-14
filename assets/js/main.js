@@ -1,20 +1,31 @@
 document.getElementById('year').textContent = new Date().getFullYear();
-AOS.init({ once:false, duration: 700, offset: 80 });
-VanillaTilt.init(document.querySelectorAll('.tilt'), { max: 8, speed: 350, glare: true, 'max-glare': 0.12 });
+
+// Typed hero titles (faster cycle)
 new Typed('#typed', {
   strings: ['Cloud Analyst','AWS Solutions Architect','Cloud Security Analyst'],
-  typeSpeed: 46, backSpeed: 26, backDelay: 1100, loop: true
+  typeSpeed: 48, backSpeed: 30, backDelay: 900, loop: true
 });
 
-// Animate skill bars on scroll
-const skillBars = document.querySelectorAll('#skills .progress-bar');
-function animateBars() {
-  skillBars.forEach(bar => {
-    const rect = bar.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50 && bar.style.width === '0%') {
-      bar.style.width = '100%';
+// AOS repeatable animations
+AOS.init({ once:false, duration: 650, offset: 80 });
+
+// IntersectionObserver for skill bars
+const bars = document.querySelectorAll('#skills .progress-bar');
+const speedMs = 1000; // ~1s fill
+bars.forEach(b => { b.style.transition = `width ${speedMs}ms ease`; });
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    const bar = entry.target;
+    const target = bar.getAttribute('data-percent') || '100';
+    if(entry.isIntersecting){
+      // animate to target value
+      requestAnimationFrame(()=>{ bar.style.width = target + '%'; });
+    }else{
+      // reset when out of view
+      bar.style.width = '0%';
     }
   });
-}
-window.addEventListener('scroll', animateBars);
-window.addEventListener('load', animateBars);
+},{ threshold: 0.4 });
+
+bars.forEach(b => observer.observe(b));

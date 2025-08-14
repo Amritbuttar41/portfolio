@@ -1,69 +1,40 @@
 :root{
   --grad: linear-gradient(135deg,#60a5fa 0%, #a78bfa 100%);
+  --bg-soft: #f8fafc;
+  --muted: #64748b;
 }
-body{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+body{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#ffffff}
 .text-gradient{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.project-img{height:200px;object-fit:cover}
-.badge.text-bg-primary{background:linear-gradient(135deg,#3b82f6,#8b5cf6);}
-.progress{height:12px;background:#e9ecef;border-radius:999px;overflow:hidden}
-.progress-bar{background:linear-gradient(90deg,#60a5fa,#a78bfa);font-size:.75rem}
-.tool{padding:.35rem .7rem;border-radius:.75rem;background:#eef2ff;border:1px solid #e5e7eb}
-.cert-pill{padding:1rem 1.25rem;border-radius:999px;background:#f8fafc;border:1px solid #e5e7eb;display:inline-block}
-.card.project{transition: transform .25s ease, box-shadow .25s ease}
-.card.project:hover{transform: translateY(-6px) scale(1.01); box-shadow:0 1.25rem 2rem rgba(0,0,0,.08)}
-.card.project .project-img{transition: transform .35s ease}
-.card.project:hover .project-img{transform: scale(1.05)}
-
-
-/* AI Glow & Motion Effects */
-.card.project {
-  position: relative;
-  overflow: hidden;
-}
-.card.project::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(from 0deg, #60a5fa, #a78bfa, #60a5fa);
-  animation: rotate 6s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
-.card.project:hover::before {
-  opacity: 0.3;
-}
-@keyframes rotate {
-  to { transform: rotate(360deg); }
-}
-.card.project .card-body {
-  position: relative;
-  z-index: 1;
-}
-
-/* Tools & Technologies AI style */
-.tool {
-  position: relative;
-  color: white;
-  background: linear-gradient(135deg,#3b82f6,#8b5cf6);
-  border: none;
-  box-shadow: 0 0 10px rgba(99,102,241,0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.tool:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 0 20px rgba(99,102,241,0.9);
-}
-.tool i {
-  background: linear-gradient(135deg,#93c5fd,#a78bfa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: bold;
-}
-
-.progress {height: 10px; background:#f1f5f9; border-radius:999px; overflow:hidden;}
-.progress-bar {background: linear-gradient(90deg,#93c5fd,#a78bfa); width:0%; transition: width 1.5s ease;}
+header.bg-light{background:#f9fafb !important}
+.navbar {backdrop-filter: saturate(1.1) blur(4px);}
+.cert-pill{padding:1rem 1.25rem;border-radius:999px;background:#fff;border:1px solid #e5e7eb;display:inline-block}
+.project-img{height:220px;object-fit:cover;border-bottom:1px solid #f0f0f0}
+.progress{height:10px;background:#eef2f7;border-radius:999px;overflow:hidden}
+/* Unique gradients per skill */
+.bar-aws{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.bar-gcp{background:linear-gradient(90deg,#3b82f6,#22d3ee)}
+.bar-linux{background:linear-gradient(90deg,#065f46,#10b981)}
+.bar-python{background:linear-gradient(90deg,#f59e0b,#2563eb)}
+.bar-networking{background:linear-gradient(90deg,#2563eb,#7c3aed)}
+.bar-security{background:linear-gradient(90deg,#ef4444,#b91c1c)}
+.bar-architecture{background:linear-gradient(90deg,#14b8a6,#06b6d4)}
+.bar-automation{background:linear-gradient(90deg,#7c3aed,#ec4899)}
+.progress-bar{width:0%}
+/* Tools toned-down AI look */
+.tool{padding:.4rem .8rem;border-radius:.75rem;background:#eef2ff;border:1px solid #e5e7eb;transition:transform .25s ease, box-shadow .25s ease}
+.tool:hover{transform:translateY(-3px);box-shadow:0 10px 18px rgba(99,102,241,.15)}
+.t-aws{background:linear-gradient(135deg,#f8fafc,#fff) }
+.t-gcp{background:linear-gradient(135deg,#f8fafc,#fff) }
+.t-linux{background:linear-gradient(135deg,#f8fafc,#fff) }
+.t-python{background:linear-gradient(135deg,#f8fafc,#fff) }
+.t-net{background:linear-gradient(135deg,#f8fafc,#fff) }
+.t-sec{background:linear-gradient(135deg,#f8fafc,#fff) }
+.t-arch{background:linear-gradient(135deg,#f8fafc,#fff) }
+.t-auto{background:linear-gradient(135deg,#f8fafc,#fff) }
+/* Project subtle AI glow */
+.card.project{position:relative;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease}
+.card.project:hover{transform:translateY(-6px); box-shadow:0 1.25rem 2rem rgba(0,0,0,.08)}
+.card.project .ai-glow{position:absolute;inset:-40%;background:radial-gradient( circle at 30% 30%, rgba(96,165,250,.22), transparent 40%), radial-gradient( circle at 70% 70%, rgba(167,139,250,.18), transparent 45%);filter:blur(12px);z-index:0;opacity:.6;transition:opacity .3s}
+.card.project:hover .ai-glow{opacity:.85}
+.card.project .card-body{position:relative;z-index:1}
+footer small{color:var(--muted)}
