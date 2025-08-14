@@ -1,268 +1,139 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AMRITPAL SINGH · Cloud Analyst Portfolio</title>
-    <meta name="description" content="Portfolio of AMRITPAL SINGH — Cloud Analyst with AWS Solutions Architect Associate. Projects, certifications, and contact.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
-  <body>
-    <!-- Particles background -->
-    <div id="tsparticles" class="particles"></div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark glassy fixed-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold tracking-wide" href="#">AMRITPAL <span class="grad-text">SINGH</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="nav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#certs">Certifications</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-          <button class="btn btn-outline-light ms-lg-3 theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <i class="bi bi-moon-stars"></i>
-          </button>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMRITPAL SINGH | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">HOME</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Hero -->
-    <header class="hero container position-relative">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-6" data-aos="fade-right">
-          <span class="badge bg-gradient mb-3 px-3 py-2"><i class="bi bi-cloud"></i> Cloud Analyst</span>
-          <h1 class="display-4 fw-extrabold lh-1 mb-3">AMRITPAL <span class="grad-text">SINGH</span></h1>
-          <p class="lead mb-3 typewriter"><span id="typed"></span></p>
-          <div class="d-flex gap-2 flex-wrap">
-            <a href="AmritpalSingh_Master Resume.docx" class="btn btn-primary btn-glow"><i class="bi bi-download me-2"></i>Download Resume</a>
-            <a href="mailto:amritbuttar41@gmail.com" class="btn btn-outline-light"><i class="bi bi-envelope me-2"></i>Email</a>
-            <a href="https://www.linkedin.com/in/amritpal-singh007" class="btn btn-outline-light" target="_blank" rel="noopener"><i class="bi bi-linkedin me-2"></i>LinkedIn</a>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="zoom-in">
-          <div class="tilt card border-0 shadow-xxl glassy p-2">
-            <img src="assets/img/hero.png" class="rounded-4 w-100" alt="Cloud isometric illustration">
-          </div>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <i class="bi bi-mouse"></i>
-        <span>Scroll</span>
-      </div>
-    </header>
+  <!-- Hero -->
+  <section class="bg-white py-5 text-center">
+    <div class="container">
+      <h1 class="fw-bold">AMRITPAL SINGH</h1>
+      <h3 class="text-primary"><span id="typed"></span></h3>
+      <a href="AmritpalSingh_Master Resume.docx" class="btn btn-primary mt-3"><i class="bi bi-download"></i> Download Resume</a>
+    </div>
+  </section>
 
-    <!-- About -->
-    <section id="about" class="section container">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-6" data-aos="fade-up">
-          <h2 class="section-title">About</h2>
-          <p class="text-secondary-emphasis fs-5">Cloud Analyst with AWS Solutions Architect Associate (SAA‑C03). Experienced across Windows/Linux administration, networking (DNS, DHCP, TCP/IP), automation with Python, and security best practices. Passionate about designing reliable, cost‑efficient cloud systems and delivering clean documentation and change management.</p>
-          <div class="d-flex flex-wrap gap-2 mt-3">
-            <span class="chip"><i class="bi bi-award me-1"></i>AWS SAA‑C03</span>
-            <span class="chip"><i class="bi bi-shield-lock me-1"></i>ISC2 (Certified in Cybersecurity)</span>
-            <span class="chip"><i class="bi bi-google me-1"></i>Google IT Support</span>
-            <span class="chip"><i class="bi bi-cpu me-1"></i>Google AI Essentials</span>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <div class="glass-panel p-4 rounded-4 shadow-xxl">
-            <h5 class="mb-3"><i class="bi bi-graph-up-arrow me-2"></i> What I bring</h5>
-            <ul class="list-unstyled grid-bullets">
-              <li>Design scalable, secure AWS architectures</li>
-              <li>Automate with Python & IaC</li>
-              <li>Root‑cause troubleshooting & documentation</li>
-              <li>Cost/performance optimization</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- About -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Cloud Analyst with AWS Solutions Architect Associate Certification, ISC2 Certified in Cybersecurity, Google IT Support Professional, and Google AI Essentials. Skilled in AWS, GCP, Linux, Python, Networking, Security, Cloud Architecture, and Automation.</p>
+    </div>
+  </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section container">
-      <h2 class="section-title" data-aos="fade-up">Skills</h2>
-      <div class="row g-3 mt-2">
-        <div class="col-6 col-md-3" data-aos="zoom-in"><span class="skill">AWS</span></div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="50"><span class="skill">GCP</span></div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100"><span class="skill">Linux</span></div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="150"><span class="skill">Python</span></div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200"><span class="skill">Networking</span></div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="250"><span class="skill">Security</span></div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300"><span class="skill">Cloud Architecture</span></div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="350"><span class="skill">Automation</span></div>
+  <!-- Skills -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="row text-center">
+        <div class="col">AWS</div>
+        <div class="col">GCP</div>
+        <div class="col">Linux</div>
+        <div class="col">Python</div>
+        <div class="col">Networking</div>
+        <div class="col">Security</div>
+        <div class="col">Cloud Architecture</div>
+        <div class="col">Automation</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section container">
-      <h2 class="section-title" data-aos="fade-up">Projects</h2>
-      <div class="row g-4 mt-1">
-        <div class="col-md-6" data-aos="fade-up">
-          <div class="card project-card glassy h-100 border-0">
-            <img src="assets/img/proj1.png" class="card-img-top rounded-top-4" alt="Cloud Cost Optimization">
+  <!-- Projects -->
+  <section id="projects" class="py-5 bg-light">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img src="assets/img/proj1.png" class="card-img-top" alt="Project 1">
             <div class="card-body">
               <h5 class="card-title">Cloud Cost Optimization</h5>
-              <p class="card-text">Reduced spend via rightsizing, storage tiering, and autoscaling; visualized with CloudWatch & Cost Explorer; enforced budgets & alerts.</p>
-              <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#proj1">Read Case Study</button>
+              <p class="card-text">Reduced spend via rightsizing, storage tiering, and autoscaling in AWS.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="card project-card glassy h-100 border-0">
-            <img src="assets/img/proj2.svg" class="card-img-top rounded-top-4" alt="High Availability Architecture">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img src="assets/img/proj2.png" class="card-img-top" alt="Project 2">
             <div class="card-body">
-              <h5 class="card-title">Multi‑Region High Availability</h5>
-              <p class="card-text">Architected active‑passive failover with Route 53 health checks, multi‑AZ RDS, and S3 cross‑region replication.</p>
-              <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#proj2">Read Case Study</button>
+              <h5 class="card-title">High Availability Architecture</h5>
+              <p class="card-text">Designed multi-region, fault-tolerant AWS architecture with RDS and Route 53.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6" data-aos="fade-up">
-          <div class="card project-card glassy h-100 border-0">
-            <img src="assets/img/proj3.svg" class="card-img-top rounded-top-4" alt="Hybrid Backup & Recovery">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img src="assets/img/proj3.png" class="card-img-top" alt="Project 3">
             <div class="card-body">
               <h5 class="card-title">Hybrid Backup & Recovery</h5>
-              <p class="card-text">Designed on‑prem ↔ AWS backups with AWS Backup, lifecycle policies, and vault locking; practiced DR runbooks.</p>
-              <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#proj3">Read Case Study</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="card project-card glassy h-100 border-0">
-            <div class="ratio ratio-16x9 bg-dots rounded-top-4"></div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Coming Soon</h5>
-              <p class="card-text">Add another project later — drop your image into <code>assets/img/</code> and update the title/description.</p>
-              <span class="small text-muted mt-auto">Tip: keep case studies short, with a metric.</span>
+              <p class="card-text">Created hybrid backup strategy using AWS Backup and on-prem systems.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Modals -->
-    <div class="modal fade" id="proj1" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content glassy border-0 rounded-4">
-          <div class="modal-header">
-            <h5 class="modal-title">Cloud Cost Optimization</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <ul>
-              <li>Rightsized EC2 & RDS, implemented autoscaling & Savings Plans</li>
-              <li>Moved cold data to S3 Glacier tiers; set lifecycle rules</li>
-              <li>Dashboarded KPIs in CloudWatch; budgets & alerts in AWS Budgets</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
+  </section>
 
-    <div class="modal fade" id="proj2" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content glassy border-0 rounded-4">
-          <div class="modal-header">
-            <h5 class="modal-title">Multi‑Region High Availability</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <ul>
-              <li>Active‑passive with Route 53 health checks & failover routing</li>
-              <li>Multi‑AZ RDS, cross‑region S3 replication</li>
-              <li>Periodic DR tests; RTO/RPO defined and met</li>
-            </ul>
-          </div>
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <h2>Contact Me</h2>
+          <p>Let’s connect — I’m open to Cloud/IT roles, projects, and collaborations.</p>
+          <a href="mailto:amritbuttar41@gmail.com" class="btn btn-primary mb-2"><i class="bi bi-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/amritpal-singh007" target="_blank" class="btn btn-outline-primary mb-2"><i class="bi bi-linkedin"></i> LinkedIn</a>
         </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="proj3" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content glassy border-0 rounded-4">
-          <div class="modal-header">
-            <h5 class="modal-title">Hybrid Backup & Recovery</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <ul>
-              <li>On‑prem to AWS with AWS Backup; vault locking</li>
-              <li>Lifecycle to infrequent access & Glacier</li>
-              <li>DR runbooks rehearsed; status dashboards for compliance</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Certifications -->
-    <section id="certs" class="section container">
-      <h2 class="section-title" data-aos="fade-up">Certifications</h2>
-      <div class="d-flex flex-wrap gap-2 mt-2" data-aos="zoom-in">
-        <span class="badge rounded-pill bg-cert">AWS Solutions Architect Associate</span>
-        <span class="badge rounded-pill bg-cert">ISC2 Certified in Cybersecurity (CC)</span>
-        <span class="badge rounded-pill bg-cert">Google IT Support Professional</span>
-        <span class="badge rounded-pill bg-cert">Google AI Essentials</span>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section container">
-      <div class="row gy-4 align-items-center">
-        <div class="col-lg-6" data-aos="fade-right">
-          <h2 class="section-title">Contact</h2>
-          <p class="text-secondary-emphasis">Let’s connect — I’m open to Cloud/IT roles, projects, and collaborations.</p>
-          <div class="d-flex flex-wrap gap-2 mt-2">
-            <a href="mailto:amritbuttar41@gmail.com" class="btn btn-primary btn-glow"><i class="bi bi-envelope me-2"></i>Email</a>
-            <a href="https://www.linkedin.com/in/amritpal-singh007" target="_blank" rel="noopener" class="btn btn-outline-light"><i class="bi bi-linkedin me-2"></i>LinkedIn</a>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <form class="glass-panel p-4 rounded-4">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label">Name</label>
-                <input type="text" class="form-control" placeholder="Your name">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="you@example.com">
-              </div>
-              <div class="col-12">
-                <label class="form-label">Message</label>
-                <textarea class="form-control" rows="4" placeholder="Tell me about your project…"></textarea>
-              </div>
-              <div class="col-12 d-grid">
-                <a href="mailto:amritbuttar41@gmail.com" class="btn btn-outline-light">Send via Email</a>
-              </div>
+        <div class="col-lg-6">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Your name">
             </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="you@example.com">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Tell me about your project…"></textarea>
+            </div>
+            <a href="mailto:amritbuttar41@gmail.com" class="btn btn-outline-primary">Send via Email</a>
           </form>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="py-5 text-center text-secondary">
-      <div class="container small">© <span id="year"></span> AMRITPAL SINGH • Built with Bootstrap · AOS · tsParticles</div>
-    </footer>
+  <footer class="py-3 text-center bg-light">
+    <small>© <span id="year"></span> AMRITPAL SINGH</small>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.6.0/tsparticles.min.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
