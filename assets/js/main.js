@@ -1,45 +1,46 @@
-// Init AOS
-AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
-
-// Stats count-up animation
-function animateCount(el) {
-  const target = parseFloat(el.dataset.count);
-  const isPercent = el.textContent.includes('%');
-  const suffix = el.textContent.replace(/^[0-9\.]+/, '');
-  let current = 0;
-  const step = target / 60;
-  const tick = () => {
-    current += step;
-    if (current >= target) { current = target; }
-    el.textContent = (isPercent ? current.toFixed(1) : Math.round(current)) + (isPercent ? '%' : suffix);
-    if (current < target) requestAnimationFrame(tick);
-  };
-  tick();
-}
-document.querySelectorAll('.stat-num').forEach((el)=>{
-  const observer = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ animateCount(el); observer.unobserve(el);} });
-  }, {threshold:.6});
-  observer.observe(el);
+// Theme toggle
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if(saved){ root.setAttribute('data-theme', saved); }
+document.getElementById('themeToggle').addEventListener('click', ()=>{
+  const isDark = root.getAttribute('data-theme') !== 'light';
+  root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
 });
-
-// Vanilla tilt for project cards
-if (window.VanillaTilt) {
-  document.querySelectorAll('.tilt').forEach(el => {
-    VanillaTilt.init(el, { max: 8, speed: 400, glare: true, 'max-glare': .15 });
-  });
-}
 
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Theme toggle with localStorage
-const root = document.documentElement;
-const saved = localStorage.getItem('theme');
-if(saved){ document.documentElement.setAttribute('data-theme', saved); document.body.dataset.bsTheme = saved === 'dark' ? 'dark':'light'; }
-document.getElementById('themeToggle').addEventListener('click', ()=>{
-  const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', current);
-  document.body.dataset.bsTheme = current === 'dark' ? 'dark' : 'light';
-  localStorage.setItem('theme', current);
+// AOS
+AOS.init({ once:true, offset: 80, duration: 700 });
+
+// Tilt
+VanillaTilt.init(document.querySelectorAll('.tilt'), { max: 10, speed: 400, glare: true, 'max-glare': 0.2 });
+
+// Typed.js
+new Typed('#typed', {
+  strings: ['Cloud Analyst','AWS Solutions Architect','Cloud Architecture'],
+  typeSpeed: 45,
+  backSpeed: 28,
+  backDelay: 1200,
+  loop: true
+});
+
+// tsParticles
+tsParticles.load('tsparticles', {
+  background: { color: 'transparent' },
+  fpsLimit: 60,
+  particles: {
+    number: { value: 40, density: { enable: true, area: 800 } },
+    color: { value: ['#7c3aed','#22d3ee','#60a5fa'] },
+    links: { enable: true, color: '#64748b', distance: 120, opacity: 0.3, width: 1 },
+    move: { enable: true, speed: 1.2, direction: 'none', outModes: 'out' },
+    opacity: { value: 0.5 },
+    size: { value: { min: 1, max: 3 } }
+  },
+  interactivity: {
+    events: { onHover: { enable: true, mode: 'grab' }, resize: true },
+    modes: { grab: { distance: 140, links: { opacity: 0.6 } } }
+  },
+  detectRetina: true
 });
