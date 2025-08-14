@@ -61,18 +61,3 @@ html[data-theme="dark"] .cert-slab{background:linear-gradient(135deg, rgba(40,60
   55%{opacity:1;transform:translateY(6px) rotateX(0) scale(1.02)}
   100%{opacity:1;transform:translateY(0) scale(1)}
 }
-/* ===== Dark Mode Text Fixes ===== */
-[data-theme="dark"] .navbar .nav-link,
-[data-theme="dark"] .navbar-brand {
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] .navbar .nav-link:hover,
-[data-theme="dark"] .navbar-brand:hover {
-  color: #00d4ff !important; /* Accent hover */
-}
-
-[data-theme="dark"] .card.project .card-title,
-[data-theme="dark"] .card.project .card-text {
-  color: #f0f0f0 !important;
-}

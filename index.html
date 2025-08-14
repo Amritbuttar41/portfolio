@@ -3,24 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Amritpal Singh - Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* Hero Section */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+      background-size: 600% 600%;
+      animation: gradientMove 15s ease infinite;
+      color: white;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero-img {
+      max-width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    /* Skills */
+    .progress {
+      background-color: #ddd;
+      height: 10px;
+      border-radius: 20px;
+    }
+    .progress-bar {
+      border-radius: 20px;
+    }
+    /* Projects */
+    .project-card {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+    /* Dark mode adjustments */
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+    body.dark-mode .navbar {
+      background-color: #1f1f1f !important;
+    }
+    body.dark-mode .card, body.dark-mode .project-card {
+      background-color: #1f1f1f;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
-<!-- About Section -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">HOME</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="text-center text-lg-start">
+  <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between">
+    <div data-aos="fade-right">
+      <h1 style="font-size:3rem; font-weight:bold;">AMRITPAL SINGH</h1>
+      <h4>Cloud Security Analyst</h4>
+    </div>
+    <div data-aos="fade-left" class="mt-4 mt-lg-0">
+      <img src="assets/img/hero.jpg" alt="Amritpal Singh" class="hero-img">
+    </div>
+  </div>
+</section>
+
+<!-- About -->
 <section id="about" class="py-5">
   <div class="container">
     <div class="row align-items-center">
-      <!-- Left column: About intro -->
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-right">
         <h2>About Me</h2>
-        <p>Hello! I'm Amritpal Singh, a Cloud Security Analyst with AWS Solutions Architect Associate, ISC2 Certified in Cybersecurity, Google IT Support Professional, Google AI Essentials, and Skills for Hire: Cybersecurity certifications. I specialize in AWS, GCP, Linux, Python, Networking, Security, Cloud Architecture, and Automation.</p>
+        <p>I’m <strong>Amritpal Singh</strong>, a Cloud Security Analyst with certifications in AWS Solutions Architect Associate, ISC2 Certified in Cybersecurity, Google IT Support Professional, Google AI Essentials, and Skills for Hire: Cybersecurity.</p>
+        <p>I specialize in AWS, GCP, Linux, Python, Networking, Security, Cloud Architecture, and Automation. My goal is to design secure, scalable cloud solutions and continuously adapt to evolving technologies.</p>
       </div>
-
-      <!-- Right column: Certifications typewriter effect -->
-      <div class="col-lg-6 text-center">
+      <div class="col-lg-6 text-center" data-aos="fade-left">
         <p style="font-size: 1.2rem; font-weight: 600; color: #00d4ff;">
           <span id="cert-typed"></span>
         </p>
@@ -29,24 +115,112 @@
   </div>
 </section>
 
+<!-- Skills -->
+<section id="skills" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Skills</h2>
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <h6>AWS</h6>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-primary" style="width:95%"></div>
+        </div>
+        <h6>GCP</h6>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-success" style="width:80%"></div>
+        </div>
+        <h6>Linux</h6>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-warning" style="width:88%"></div>
+        </div>
+        <h6>Python</h6>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-danger" style="width:78%"></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h6>Networking</h6>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-info" style="width:82%"></div>
+        </div>
+        <h6>Security</h6>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-primary" style="width:90%"></div>
+        </div>
+        <h6>Cloud Architecture</h6>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-success" style="width:85%"></div>
+        </div>
+        <h6>Automation</h6>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-warning" style="width:75%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="project-card p-3 bg-light">
+          <h5>Project 1</h5>
+          <p>Project description here...</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="project-card p-3 bg-light">
+          <h5>Project 2</h5>
+          <p>Project description here...</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="project-card p-3 bg-light">
+          <h5>Project 3</h5>
+          <p>Project description here...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2>Contact</h2>
+    <p>Email me for opportunities or collaborations.</p>
+    <a href="mailto:amritbuttar41@gmail.com" class="btn btn-primary">Send Email</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-3 bg-dark text-light text-center">
+  <div class="container">
+    <p>© 2025 Amritpal Singh. All Rights Reserved.</p>
+  </div>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-// Typed effect for certifications
-var typedCerts = new Typed('#cert-typed', {
-  strings: [
-    'AWS Solutions Architect Associate',
-    'Google IT Support Professional',
-    'ISC2 Certified in Cybersecurity',
-    'Google AI Essentials',
-    'Skills for Hire: Cybersecurity'
-  ],
-  typeSpeed: 50,
-  backSpeed: 25,
-  backDelay: 1500,
-  loop: true
-});
+  AOS.init({ once: false }); // run animations both on scroll down and up
+  var typedCerts = new Typed('#cert-typed', {
+    strings: [
+      'AWS Solutions Architect Associate',
+      'Google IT Support Professional',
+      'ISC2 Certified in Cybersecurity',
+      'Google AI Essentials',
+      'Skills for Hire: Cybersecurity'
+    ],
+    typeSpeed: 50,
+    backSpeed: 25,
+    backDelay: 1500,
+    loop: true
+  });
 </script>
-
 </body>
 </html>
