@@ -9,20 +9,36 @@ new Typed('#typed', {
 // AOS repeatable animations
 AOS.init({ once:false, duration: 650, offset: 80 });
 
-// IntersectionObserver for skill bars
+// Skill bars animation both scroll down and scroll up
+const skillPercents = {
+  'bar-aws': 95,
+  'bar-gcp': 80,
+  'bar-linux': 88,
+  'bar-python': 78,
+  'bar-networking': 82,
+  'bar-security': 90,
+  'bar-architecture': 85,
+  'bar-automation': 75
+};
+
 const bars = document.querySelectorAll('#skills .progress-bar');
 const speedMs = 1000; // ~1s fill
-bars.forEach(b => { b.style.transition = `width ${speedMs}ms ease`; });
+bars.forEach(b => {
+  b.style.transition = `width ${speedMs}ms ease`;
+  const cls = Array.from(b.classList).find(c => skillPercents[c] !== undefined);
+  if (cls) {
+    b.dataset.targetWidth = skillPercents[cls] + '%';
+  }
+});
 
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     const bar = entry.target;
-    const target = bar.getAttribute('data-percent') || '100';
     if(entry.isIntersecting){
-      // animate to target value
-      requestAnimationFrame(()=>{ bar.style.width = target + '%'; });
+      // animate to target width
+      requestAnimationFrame(()=>{ bar.style.width = bar.dataset.targetWidth; });
     }else{
-      // reset when out of view
+      // reset when out of view to allow reanimation when scrolling back
       bar.style.width = '0%';
     }
   });
