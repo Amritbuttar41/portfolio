@@ -1,42 +1,15 @@
-/* Modern premium styling */
 :root{
-  --radius-xl: 1.5rem;
-  --orb1: rgba(99,102,241,.35);
-  --orb2: rgba(34,197,94,.25);
+  --grad: linear-gradient(135deg,#60a5fa 0%, #a78bfa 100%);
 }
-html{scroll-behavior:smooth}
-.section{padding:96px 0}
-.bg-section{background:linear-gradient(180deg,rgba(0,0,0,.02),transparent 30%,rgba(0,0,0,.02))}
-.glass-nav{backdrop-filter:saturate(180%) blur(14px); background: color-mix(in srgb, var(--bs-body-bg), transparent 30%);}
-.brand-dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(45deg,#6ea8fe,#d0bfff);display:inline-block}
-.hero{padding:140px 0 100px; position:relative}
-.bg-orb{position:absolute; filter:blur(60px); border-radius:999px; z-index:0}
-.orb-1{width:420px;height:420px;background:var(--orb1); top:-80px; left:-60px}
-.orb-2{width:520px;height:520px;background:var(--orb2); bottom:-120px; right:-120px}
-.hero-card{border-radius:var(--radius-xl); overflow:hidden; backdrop-filter: blur(8px);}
-.gradient-text{background:linear-gradient(90deg,#111827,#3b82f6,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 8s linear infinite}
-@keyframes shift{0%{background-position:0%}100%{background-position:200%}}
-
-.cert-chips .chip{padding:.35rem .75rem;border-radius:999px;border:1px solid var(--bs-border-color); background:var(--bs-body-bg)}
-
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.stat{padding:18px;border-radius:1rem;border:1px solid var(--bs-border-color);background:var(--bs-body-bg);text-align:center}
-.stat-num{font-size:1.6rem;font-weight:700}
-.stat-label{font-size:.9rem;color:var(--bs-secondary-color)}
-
-.tile{padding:24px;border:1px solid var(--bs-border-color);border-radius:1rem;background:var(--bs-body-bg);transition:transform .2s ease, box-shadow .2s}
-.tile:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
-
-.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-@media(min-width:768px){.skills-grid{grid-template-columns:repeat(4,1fr)}}
-.skill{padding:14px 16px;border:1px solid var(--bs-border-color);border-radius:1rem;background:var(--bs-body-bg)}
-.skill .bar{height:8px;border-radius:999px;background:#e9ecef;margin-top:10px;overflow:hidden}
-.skill .bar>div{height:100%;width:var(--p);background:linear-gradient(90deg,#60a5fa,#a78bfa)}
-
-.project.card{border-radius:1.25rem;overflow:hidden;border:1px solid var(--bs-border-color);transition:transform .2s ease, box-shadow .2s}
-.project.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
-
-.contact-card{border:1px solid var(--bs-border-color);background:linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,.45));}
-
-[data-theme="dark"] .contact-card{background:linear-gradient(180deg, rgba(17,24,39,.65), rgba(17,24,39,.45));}
-
+body{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+.text-gradient{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.project-img{height:200px;object-fit:cover}
+.badge.text-bg-primary{background:linear-gradient(135deg,#3b82f6,#8b5cf6);}
+.progress{height:12px;background:#e9ecef;border-radius:999px;overflow:hidden}
+.progress-bar{background:linear-gradient(90deg,#60a5fa,#a78bfa);font-size:.75rem}
+.tool{padding:.35rem .7rem;border-radius:.75rem;background:#eef2ff;border:1px solid #e5e7eb}
+.cert-pill{padding:1rem 1.25rem;border-radius:999px;background:#f8fafc;border:1px solid #e5e7eb;display:inline-block}
+.card.project{transition: transform .25s ease, box-shadow .25s ease}
+.card.project:hover{transform: translateY(-6px) scale(1.01); box-shadow:0 1.25rem 2rem rgba(0,0,0,.08)}
+.card.project .project-img{transition: transform .35s ease}
+.card.project:hover .project-img{transform: scale(1.05)}
